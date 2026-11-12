@@ -1,4 +1,5 @@
 using System;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace GitCredentialManager.Authentication.OAuth.Json
@@ -22,7 +23,7 @@ namespace GitCredentialManager.Authentication.OAuth.Json
         [JsonPropertyName("scope")]
         public virtual string Scope { get; set; }
 
-        public virtual OAuth2TokenResult ToResult()
+        public OAuth2TokenResult ToResult()
         {
             return new OAuth2TokenResult(AccessToken, TokenType)
             {
